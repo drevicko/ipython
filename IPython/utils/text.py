@@ -556,6 +556,9 @@ class FullEvalFormatter(Formatter):
                 # the formatting
 
                 if format_spec:
+                   if conversion:
+                      # override conversion spec
+                      field_name = '!'.join([field_name, conversion])
                     # override format spec, to allow slicing:
                     field_name = ':'.join([field_name, format_spec])
 
